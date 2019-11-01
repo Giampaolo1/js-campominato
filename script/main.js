@@ -147,7 +147,7 @@ while (minaPresa == false && punteggio < 84) {
   // // CONTROLLO 2 - controlla se il num inserito dall utente è già stato inserito
   // var found2 = inArray(promptUtente, numeriUtente);
   //   if (found2 == false) {
-  //   numeriUtente.push(promptUtente);
+     numeriUtente.push(promptUtente);
   //   }
   //   else {
   //   alert("Num già inserito");
