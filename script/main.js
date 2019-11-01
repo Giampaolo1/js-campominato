@@ -139,18 +139,28 @@ return Math.floor(Math.random() * (max - min)) + min; //Il max è escluso e il m
 
 var minaPresa = false;
 var punteggio = 0;
+var numeriUtente = [];
 
 while (minaPresa == false && punteggio < 84) {
   var promptUtente = parseInt(prompt("Inserisci un numero da 1 a 100"));
+  numeriUtente.push(promptUtente);
   if (inArray(promptUtente, numeri)== true) {
-    minaPresa == true;
+    minaPresa = true;
     console.log("Hai preso una mina");
   } else {
     punteggio++;
     console.log("Mina scansata");
   }
 }
+console.log("I numeri UTENTE sono", numeriUtente);
 console.log("punteggio", punteggio);
+
+// CONTROLLO 2 - controlla se il num inserito dall utente è già stato inserito
+//   var found = inArray(numRand, numeri);
+//   if (found == false) {
+//   numeri.push(numRand);
+//   }
+
 
 
 
