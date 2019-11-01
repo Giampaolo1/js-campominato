@@ -143,17 +143,31 @@ var numeriUtente = [];
 
 while (minaPresa == false && punteggio < 84) {
   var promptUtente = parseInt(prompt("Inserisci un numero da 1 a 100"));
-  numeriUtente.push(promptUtente);
+
+  // // CONTROLLO 2 - controlla se il num inserito dall utente è già stato inserito
+  // var found2 = inArray(promptUtente, numeriUtente);
+  //   if (found2 == false) {
+  //   numeriUtente.push(promptUtente);
+  //   }
+  //   else {
+  //   alert("Num già inserito");
+  //   }
+  //   // FINE CONTROLLO 2
+
   if (inArray(promptUtente, numeri)== true) {
     minaPresa = true;
     console.log("Hai preso una mina");
-  } else {
+  }
+  // else if (inArray(promptUtente, numeriUtente)== true) {
+  //   alert("Num già inserito");
+  // }
+  else {
     punteggio++;
     console.log("Mina scansata");
   }
 }
 console.log("I numeri UTENTE sono", numeriUtente);
-console.log("punteggio", punteggio);
+console.log("Punteggio", punteggio);
 
 // CONTROLLO 2 - controlla se il num inserito dall utente è già stato inserito
 //   var found = inArray(numRand, numeri);
