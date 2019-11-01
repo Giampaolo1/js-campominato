@@ -65,9 +65,9 @@ while (numeri.length < 16) {
   numeri.push(numRand);
   }
 }
-console.log(found);
-console.log("lunghezza array", numeri.length);
-console.log(numeri);
+// console.log(found);
+// console.log("lunghezza array", numeri.length);
+console.log("I numeri BOMBA sono", numeri);
 
 // Creare la FUNZIONE IN ARRAY vista nel recap:
 
@@ -90,3 +90,80 @@ min = Math.ceil(min);
 max = Math.floor(max);
 return Math.floor(Math.random() * (max - min)) + min; //Il max è escluso e il min è incluso
 }
+
+
+// IDEA: Quante volte l utente dovrà inserire un numero ?
+// Fino a che non prende una mina quindi Creati una variabile minaPresa
+// E le dai inizialmente valore false
+
+// IDEA: Quindi apriti un while che ingloberà tutto
+// E gli dai come condizione che while (minaPresa == false && punteggio<84 )
+
+// Chiaramente devi creare anche una var punteggio che inizialmente è = 0
+
+// Ti apri il tuo while che ingloba tutto e poi inizi a mettere il prompt
+// Per far ripetere le domande del numero
+
+// IDEA:
+
+// Poi inizi a porre le condizioni
+// Ad esempio una condizione sarà sicuramente
+// Se che il numero scelto dell' utente
+// Sarà uguale ai numeri presenti nelle bombe
+// Il giocatore sarà morto
+// Quindi la tua variabile minaPresa assumerà valore true
+// E uscirai dal ciclo
+// Altrimenti se non sarà uguale
+// Mina presa rimane sempre a false
+// E punteggio aumenta di uno
+// Se raggiungesse 84
+// Usciremmo cmq dal ciclo
+// Per il momento inizia a scrivere questo
+// Poi rifletti su come puoi introdurre la condizione che il giocatore non può inserire 2 volte lo stesso valore
+
+// // UTENTE:
+// // 1: inserisce (via prompt) un num (min 1 max 100)
+// var promptUtente = parseInt(prompt("Inserisci un numero da 1 a 100"));
+//
+// // Li conservo in un array vuoto:
+// var numeriUtente = [];
+//
+// // E (CONTROLLO2) l’utente non può inserire due volte lo stesso numero, ma sempre numeri diversi.
+// while (numeriUtente !== numeri) {
+//   var found2 = inArray(promptUtente, numeriUtente);
+//   if (found2 == false) {
+//   numeriUtente.push(promptUtente);
+//   }
+// }
+// console.log("I numeri UTENTE sono", numeriUtente);
+
+var minaPresa = false;
+var punteggio = 0;
+
+while (minaPresa == false && punteggio < 3) {
+  var promptUtente = parseInt(prompt("Inserisci un numero da 1 a 100"));
+  if () {
+    inArray()  
+  } else {
+    console.log("Hai preso una mina");
+  }
+}
+console.log("punteggio", punteggio);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// IDEA:
