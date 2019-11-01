@@ -47,10 +47,10 @@ var numeri = [];
 
 // for (var i = 0; i < 16; i++) {
 //   var numRand = getRandomInt(1, 101);
-//   // CONTROLLO 1 - controlla se il num random è già inserito
+//   CONTROLLO 1 - controlla se il num random è già inserito
 //   var found = inArray(numRand, numeri);
 //     if (found == false) {
-//       numeri.push(numRand);
+//     numeri.push(numRand);
 //     }
 // }
 
@@ -59,21 +59,20 @@ var numeri = [];
 while (numeri.length < 16) {
   var numRand = getRandomInt(1, 101);
   // CONTROLLO 1 - controlla se il num random è già inserito
-  var found = inArray(numRand, numeri);
-  if (found == false) {
-  numeri.push(numRand);
-  }
+  //   var found = inArray(numRand, numeri);
+  //   if (found == false) {
+  //   numeri.push(numRand);
+  //   }
 }
-console.log(found);
-console.log("lunghezza array", numeri.length);
+// console.log(found);
+// console.log("lunghezza array", numeri.length);
 console.log(numeri);
 
 // Creare la FUNZIONE IN ARRAY vista nel recap:
 
 function inArray (value, array){
   var found = false;
-
-  var i = 0
+  var i = 0;
   while (found == false && i < array.length) {
     if array[i] == value {
       found = true;
@@ -90,12 +89,3 @@ min = Math.ceil(min);
 max = Math.floor(max);
 return Math.floor(Math.random() * (max - min)) + min; //Il max è escluso e il min è incluso
 }
-
-
-
-
-// numrandom (1, 100)
-//
-// function numrandom (min, max){
-//   return Math.floor(Math.random*(max-min))
-// }
