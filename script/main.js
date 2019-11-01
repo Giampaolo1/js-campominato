@@ -55,17 +55,18 @@ var numeri = [];
 // }
 
 
-// l array deve essere lungo 16
+// l array deve essere lungo 16:
+
 while (numeri.length < 16) {
   var numRand = getRandomInt(1, 101);
   // CONTROLLO 1 - controlla se il num random è già inserito
-  //   var found = inArray(numRand, numeri);
-  //   if (found == false) {
-  //   numeri.push(numRand);
-  //   }
+  var found = inArray(numRand, numeri);
+  if (found == false) {
+  numeri.push(numRand);
+  }
 }
-// console.log(found);
-// console.log("lunghezza array", numeri.length);
+console.log(found);
+console.log("lunghezza array", numeri.length);
 console.log(numeri);
 
 // Creare la FUNZIONE IN ARRAY vista nel recap:
@@ -74,7 +75,7 @@ function inArray (value, array){
   var found = false;
   var i = 0;
   while (found == false && i < array.length) {
-    if array[i] == value {
+    if (array[i] == value) {
       found = true;
     }
     i++
