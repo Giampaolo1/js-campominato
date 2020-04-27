@@ -40,6 +40,7 @@
 
 //  Il computer deve generare 16 numeri casuali da 1 a 100.
 // dove li conservo? Array.
+function fxStart() {
 
 var numeri = [];
 
@@ -175,21 +176,4 @@ console.log("Punteggio", punteggio);
 //   numeri.push(numRand);
 //   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// IDEA:
+}
