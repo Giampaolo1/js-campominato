@@ -55,7 +55,6 @@ var numeri = [];
 //     }
 // }
 
-
 // l array deve essere lungo 16:
 
 while (numeri.length < 16) {
@@ -69,6 +68,7 @@ while (numeri.length < 16) {
 // console.log(found);
 // console.log("lunghezza array", numeri.length);
 console.log("I numeri BOMBA sono", numeri);
+document.getElementById("numBomb").innerHTML = "I Numeri Bomba sono: " + numeri;
 
 // Creare la FUNZIONE IN ARRAY vista nel recap:
 
@@ -158,6 +158,7 @@ while (minaPresa == false && punteggio < 84) {
   if (inArray(promptUtente, numeri)== true) {
     minaPresa = true;
     console.log("Hai preso una mina");
+    alert("Hai preso una mina! GAME OVER");
   }
   // else if (inArray(promptUtente, numeriUtente)== true) {
   //   alert("Num già inserito");
@@ -165,10 +166,16 @@ while (minaPresa == false && punteggio < 84) {
   else {
     punteggio++;
     console.log("Mina scansata");
+    alert("Mina Scansata!");
+
   }
 }
 console.log("I numeri UTENTE sono", numeriUtente);
+document.getElementById("numUte").innerHTML = "I Numeri Utente sono: " + numeriUtente;
+
 console.log("Punteggio", punteggio);
+document.getElementById("punteggio").innerHTML = "Punteggio: " + punteggio;
+
 
 // CONTROLLO 2 - controlla se il num inserito dall utente è già stato inserito
 //   var found = inArray(numRand, numeri);

@@ -18,3 +18,10 @@ body {
   background-color: lightblue;
   border-radius: 4px;
 }
+
+#numBomb {
+  color: red;
+}
+#numUte {
+  color: green;
+}
