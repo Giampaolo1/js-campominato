@@ -1,20 +1,3 @@
-// DESCRIZIONE:
-//  Il computer deve generare 16 numeri casuali da 1 a 100.
-// In seguito deve chiedere all’utente di inserire un numero da 1 a 100 alla volta,
-// se il numero è presente nella lista dei numeri generati, la partita termina,
-// altrimenti continua chiedendo all’utente un altro numero.
-
-// La partita termina quando il giocatore inserisce un numero “vietato” o
-// raggiunge il numero massimo possibile di numeri consentiti.
-
-// Al termine della partita il software deve comunicare il punteggio,
-// cioè il numero di volte che l’utente ha inserito un numero consentito.
-
-// Ci sono 2 controlli che van fatti già di base per dar senso all’ex:
-// i 16 numeri vietati/mina, devono essere tutti diversi, non possono esserci doppioni;
-// l’utente non può inserire due volte lo stesso numero, ma sempre numeri diversi.
-
-
 // COMPUTER
 // 1: gen 16 num random (min 1 max 100)
 // E (CONTROLLO1) i 16 numeri vietati/mina, devono essere tutti diversi, non possono esserci doppioni.
@@ -36,25 +19,13 @@
 // I controlli sono molto simili, una volta lo fa il comp e una volta l utente, quindi una funzione è l ideale, che richiamo al momento del bisogno
 
 
-
-
 //  Il computer deve generare 16 numeri casuali da 1 a 100.
 // dove li conservo? Array.
-function fxStart() {
 
+function fxStart() {
 var numeri = [];
 
 // FOR E' IL CICLO SBAGLIATO xke' non riempira' 16 caselle, ma contera' anche i num gia presenti (doppioni)
-
-// for (var i = 0; i < 16; i++) {
-//   var numRand = getRandomInt(1, 101);
-//   CONTROLLO 1 - controlla se il num random è già inserito
-//   var found = inArray(numRand, numeri);
-//     if (found == false) {
-//     numeri.push(numRand);
-//     }
-// }
-
 // l array deve essere lungo 16:
 
 while (numeri.length < 16) {
@@ -63,10 +34,10 @@ while (numeri.length < 16) {
   var found = inArray(numRand, numeri);
   if (found == false) {
   numeri.push(numRand);
-  }
+  } 
 }
-// console.log(found);
-// console.log("lunghezza array", numeri.length);
+numeri.sort(); // Me li metto in ordine
+
 console.log("I numeri BOMBA sono", numeri);
 document.getElementById("numBomb").innerHTML = "I Numeri Bomba sono: " + numeri;
 
@@ -84,20 +55,55 @@ function inArray (value, array){
   return found;
 }
 
-
-// MDN FUNZIONE X NUM RANDOM
+// FUNZIONE X NUM RANDOM
 function getRandomInt(min, max) {
 min = Math.ceil(min);
 max = Math.floor(max);
 return Math.floor(Math.random() * (max - min)) + min; //Il max è escluso e il min è incluso
 }
 
+// -------------------------------------------------------------
 
-// IDEA: Quante volte l utente dovrà inserire un numero ?
+var minaPresa = false;
+var punteggio = 0;
+var numeriUtente = [];
+
+while (minaPresa == false && punteggio < 84) {
+  var promptUtente = parseInt(prompt("Inserisci un numero da 1 a 100"));
+     numeriUtente.push(promptUtente);
+
+  if (inArray(promptUtente, numeri) == true) {
+    minaPresa = true;
+    console.log("Hai preso una mina");
+    alert("Hai preso una mina! GAME OVER");
+  }
+  else {
+    punteggio++;
+    console.log("Mina scansata");
+    alert("Mina Scansata!");
+  }
+
+  // IDEA: Controllo
+  // if (inArray(promptUtente, numeriUtente) === true) {
+  //   alert("Hai già inserito questo numero!");
+  // }
+
+}
+
+console.log("I numeri UTENTE sono", numeriUtente);
+document.getElementById("numUte").innerHTML = "I Numeri Utente sono: " + numeriUtente;
+
+console.log("Punteggio", punteggio);
+document.getElementById("punteggio").innerHTML = "Punteggio: " + punteggio;
+
+}
+
+
+// Quante volte l utente dovrà inserire un numero ?
 // Fino a che non prende una mina quindi Creati una variabile minaPresa
 // E le dai inizialmente valore false
 
-// IDEA: Quindi apriti un while che ingloberà tutto
+// Quindi apriti un while che ingloberà tutto
 // E gli dai come condizione che while (minaPresa == false && punteggio<84 )
 
 // Chiaramente devi creare anche una var punteggio che inizialmente è = 0
@@ -137,50 +143,3 @@ return Math.floor(Math.random() * (max - min)) + min; //Il max è escluso e il m
 //   }
 // }
 // console.log("I numeri UTENTE sono", numeriUtente);
-
-var minaPresa = false;
-var punteggio = 0;
-var numeriUtente = [];
-
-while (minaPresa == false && punteggio < 84) {
-  var promptUtente = parseInt(prompt("Inserisci un numero da 1 a 100"));
-
-  // // CONTROLLO 2 - controlla se il num inserito dall utente è già stato inserito
-  // var found2 = inArray(promptUtente, numeriUtente);
-  //   if (found2 == false) {
-     numeriUtente.push(promptUtente);
-  //   }
-  //   else {
-  //   alert("Num già inserito");
-  //   }
-  //   // FINE CONTROLLO 2
-
-  if (inArray(promptUtente, numeri)== true) {
-    minaPresa = true;
-    console.log("Hai preso una mina");
-    alert("Hai preso una mina! GAME OVER");
-  }
-  // else if (inArray(promptUtente, numeriUtente)== true) {
-  //   alert("Num già inserito");
-  // }
-  else {
-    punteggio++;
-    console.log("Mina scansata");
-    alert("Mina Scansata!");
-
-  }
-}
-console.log("I numeri UTENTE sono", numeriUtente);
-document.getElementById("numUte").innerHTML = "I Numeri Utente sono: " + numeriUtente;
-
-console.log("Punteggio", punteggio);
-document.getElementById("punteggio").innerHTML = "Punteggio: " + punteggio;
-
-
-// CONTROLLO 2 - controlla se il num inserito dall utente è già stato inserito
-//   var found = inArray(numRand, numeri);
-//   if (found == false) {
-//   numeri.push(numRand);
-//   }
-
-}
