@@ -2,11 +2,9 @@
 // 1: gen 16 num random (min 1 max 100)
 // E (CONTROLLO1) i 16 numeri vietati/mina, devono essere tutti diversi, non possono esserci doppioni.
 
-
 // UTENTE:
 // 1: inserisce (via prompt) un num (min 1 max 100)
 // E (CONTROLLO2) l’utente non può inserire due volte lo stesso numero, ma sempre numeri diversi.
-
 
 // CALCOLI:
 // 1: match if the number insert by user match the one generated random
@@ -17,7 +15,6 @@
 // 1: i 16 numeri vietati/mina, devono essere tutti diversi, non possono esserci doppioni.
 // 2: l’utente non può inserire due volte lo stesso numero, ma sempre numeri diversi.
 // I controlli sono molto simili, una volta lo fa il comp e una volta l utente, quindi una funzione è l ideale, che richiamo al momento del bisogno
-
 
 //  Il computer deve generare 16 numeri casuali da 1 a 100.
 // dove li conservo? Array.
@@ -34,7 +31,7 @@ while (numeri.length < 16) {
   var found = inArray(numRand, numeri);
   if (found == false) {
   numeri.push(numRand);
-  } 
+  }
 }
 numeri.sort(); // Me li metto in ordine
 
@@ -97,6 +94,15 @@ console.log("Punteggio", punteggio);
 document.getElementById("punteggio").innerHTML = "Punteggio: " + punteggio;
 
 }
+
+
+
+
+
+
+
+
+
 
 
 // Quante volte l utente dovrà inserire un numero ?
